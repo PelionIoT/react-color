@@ -1,7 +1,12 @@
+
+import 'jsdom-global/register'; 
 import React from 'react'
 import renderer from 'react-test-renderer'
 import * as color from '../../helpers/color'
-import { mount } from 'enzyme'
+import Enzyme from 'enzyme';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+Enzyme.configure({ adapter: new Adapter() });
+global.mount = Enzyme.mount;
 
 import Google from './Google'
 import GoogleFields from './GoogleFields'

@@ -1,7 +1,12 @@
 /* global test, jest, expect */
 
+import 'jsdom-global/register'; 
 import React from 'react'
 import renderer from 'react-test-renderer'
+import Enzyme from 'enzyme';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+Enzyme.configure({ adapter: new Adapter() });
+
 import { mount } from 'enzyme'
 import * as color from '../../helpers/color'
 

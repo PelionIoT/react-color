@@ -1,9 +1,13 @@
 /* global test, jest, expect */
 
+import 'jsdom-global/register'; 
 import React from 'react'
 import renderer from 'react-test-renderer'
-import { mount } from 'enzyme'
+import Enzyme from 'enzyme';
+import Adapter from '@cfaester/enzyme-adapter-react-18';
+Enzyme.configure({ adapter: new Adapter() });
 
+global.mount = Enzyme.mount;
 import Circle from './Circle'
 import CircleSwatch from './CircleSwatch'
 import { Swatch } from '../common'

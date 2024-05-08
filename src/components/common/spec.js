@@ -1,5 +1,5 @@
 /* global test, jest, expect */
-
+import 'jsdom-global/register'; 
 import React from 'react'
 import renderer from 'react-test-renderer'
 import { red } from '../../helpers/color'
